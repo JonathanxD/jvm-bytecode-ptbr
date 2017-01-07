@@ -18,10 +18,10 @@ Bom, se você não vai utilizar para nada na sua vida, então não perca seu tem
 
 ## Capitulos
 
-- [Capitulo 1 - Descrições, Tipos, Modificadores](capitulo1/)
-- [Capitulo 2 - Classes, Inicialização, Fields e metodos](capitulo2/)
-- [Capitulo 3 - Instruções basicas](capitulo3/)
-- [Capitulo 4 - Invocando métodos](capitulo4/)
-- [Capitulo 5 - Criando lambdas e invocações dinamicas](capitulo5/)
-- [Capitulo 6 - Controle de fluxo: Labels, break, continue, ifs, for, for-each, while, do-while](capitulo6/)
-- [Capitulo 7 - Controle de exceções e recursos: try-catch e try-with-resources](capitulo7/)
+- [Capitulo 1 - Descrições, Tipos, Modificadores](capitulo1/index)
+- [Capitulo 2 - Classes, inicialização, fields e metodos](capitulo2/index)
+- [Capitulo 3 - Instruções basicas](capitulo3/index)
+- [Capitulo 4 - Invocando métodos, construtores e super construtores](capitulo4/index)
+- [Capitulo 5 - Criando lambdas e invocações dinamicas](capitulo5/index)
+- [Capitulo 6 - Controle de fluxo: Labels, break, continue, ifs, for, for-each, while, do-while](capitulo6/index)
+- [Capitulo 7 - Controle de exceções e recursos: try-catch e try-with-resources](capitulo7/index)
