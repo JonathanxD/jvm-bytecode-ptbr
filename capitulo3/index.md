@@ -1,6 +1,6 @@
 # Introdução
 
-Aqui falaremos das instruções, com uma table completa com todas instruções e suas funções.
+Aqui falaremos sobre armazenamento das informações na JVM, acesso a fields, definição de valores das fields e variaveis.
 
 # Armazenamento
 
