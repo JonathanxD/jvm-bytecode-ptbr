@@ -194,7 +194,7 @@ class A<T> {
 }
 ```
 
-Acima temos alguns exemplos de assinatura genérica, porém a JVM não suporta tipos genericos de fato, eles são apenas um sugar syntax (Dê uma lida [aqui](../ref/sugarsyntax/index) caso não saiba o que é sugar syntax). As assinaturas são guardadas em um lugar especial, para servir de referencia somente para quem estiver usando a classe para escrever algum código, mas para a JVM eles são inuteis.
+Acima temos alguns exemplos de assinatura genérica, porém a JVM não suporta tipos genericos de fato, eles são apenas um sugar syntax (Dê uma lida [aqui](../ref/sugarsyntax/) caso não saiba o que é sugar syntax). As assinaturas são guardadas em um lugar especial, para servir de referencia somente para quem estiver usando a classe para escrever algum código, mas para a JVM eles são inuteis.
 
 A descrição das assinaturas genericas devem estar dentro de `<` e `>`, sempre (somente assinaturas genericas, isto não inclui tipos genericos).
 
