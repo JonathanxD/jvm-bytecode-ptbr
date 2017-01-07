@@ -57,7 +57,7 @@ Se não for o caso, você deve utilizar uma representação binária.
 De uma forma mais simplificada: os `.` são convertidos para `/`.
 
 | Classe                    | Representação              |
-|:--------------------------|---------------------------:|
+|:--------------------------|:---------------------------|
 | `java.lang.String`        | `java/lang/String`         |
 | `java.lang.Object`        | `java/lang/Object`         |
 | `java.util.List<T>`       | `java/util/List`           |
@@ -73,7 +73,7 @@ Observação²: A representação de classes Inner depende do nome qual o compil
 As classes são descritas por meio de seu nome binario junto a um prefixo (`L`) e sufixo (`;`), já os tipos primitivos são descritos por meio de nomes especiais.
 
 | Tip o                     | Representação              |
-|:--------------------------|---------------------------:|
+|:--------------------------|:---------------------------|
 | `java.lang.String`        | `Ljava/lang/String;`       |
 | `java.lang.Object`        | `Ljava/lang/Object;`       |
 | `java.util.List<T>`       | `Ljava/util/List;`         |
