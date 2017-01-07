@@ -58,7 +58,7 @@ getfield com/to/A.num:I // com/to/A = localização, num = nome da field, I = ti
 
 Para inserirmos valores nas fields utilizamos as instruções `putfield` e `putstatic`, que tem um funcionamento parecido com as de acesso, porém elas recebem 1 parametro a mais da `operand stack`, que é o valor a ser inserido.
 
-Suponhamos que queremos inserir valores nas fields `num` e `name`, e que neste momento elas não são finais mais:
+Suponhamos que queremos inserir valores nas fields `num` e `name`, e que neste momento elas não são finais:
 
 ```java
 final class A {
