@@ -7,7 +7,7 @@ Neste capitulo irei explicar sobre os tipos, os descritores e os modificadores.
 Os modificadores funcionam de uma forma bem especial na JVM, muitos deles tem códigos iguais porém significam coisas diferentes, isto depende de onde estão aplicados, exemplo, o modificador `0x0040`, quando presente em uma field, significa `volatile`, quando presente em um método, significa `bridge`.
 
 | Modificador      | Hex    | Elementos                         | Efeito                                                             |
-|:-----------------|:------:|:----------------------------------|:------------------------------------------------------------------:|
+|:-----------------|:------:|:---------------------------------:|:------------------------------------------------------------------:|
 | ACC_PUBLIC       | 0x0001 | Classe, field e método            | Aplica visibilidade publica                                        |
 | ACC_PRIVATE      | 0x0002 | Classe, field e método            | Aplica visibilidade privada                                        |
 | ACC_PROTECTED    | 0x0004 | Classe, field e método            | Aplica visibilidade protegida                                      |
