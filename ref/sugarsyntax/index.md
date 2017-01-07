@@ -14,7 +14,7 @@ for (String a : messages) {
 }
 ```
 
-#### Iterable:
+#### Iterable
 
 ```java
 Iterator<String> iterator = messages.iterator();
