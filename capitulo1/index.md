@@ -7,7 +7,7 @@ Neste capitulo irei explicar sobre os tipos, os descritores e os modificadores.
 Os modificadores funcionam de uma forma bem especial na JVM, muitos deles tem códigos iguais porém significam coisas diferentes, isto depende de onde estão aplicados, exemplo, o modificador `0x0040`, quando presente em uma field, significa `volatile`, quando presente em um método, significa `bridge`.
 
 | Modificador      | Hex    | Elementos                         | Efeito                                                             |
-|:-----------------|:------:|:---------------------------------:|:------------------------------------------------------------------:|
+|:-----------------|:-------|:---------------------------------:|:------------------------------------------------------------------:|
 | ACC_PUBLIC       | 0x0001 | Classe, field e método            | Aplica visibilidade publica                                        |
 | ACC_PRIVATE      | 0x0002 | Classe, field e método            | Aplica visibilidade privada                                        |
 | ACC_PROTECTED    | 0x0004 | Classe, field e método            | Aplica visibilidade protegida                                      |
@@ -27,6 +27,7 @@ Os modificadores funcionam de uma forma bem especial na JVM, muitos deles tem c�
 | ACC_ANNOTATION   | 0x2000 | Classe                            | Informa que a classe é uma anotação                                |
 | ACC_ENUM         | 0x4000 | Classe e fields dos enums         | Informa que a classe ou field é um enum                            |
 | ACC_MANDATED     | 0x8000 | Parametro                         | Parametro que existe 'implicitamente' no código fonte              |
+
 
 **ACC_SUPER**: Gerada para todas classes apartir do Java 1.1, classes que não tem esta flag tem suas instruções de `invokespecial` tratados de forma diferente, como era em versões antigas da JVM, a instrução é tratada de acordo com sua documentação somente quando esta flag está presente.
 
