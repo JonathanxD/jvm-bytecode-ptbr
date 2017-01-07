@@ -6,6 +6,7 @@ Neste capitulo irei explicar sobre os tipos, os descritores e os modificadores.
 
 Os modificadores funcionam de uma forma bem especial na JVM, muitos deles tem códigos iguais porém significam coisas diferentes, isto depende de onde estão aplicados, exemplo, o modificador `0x0040`, quando presente em uma field, significa `volatile`, quando presente em um método, significa `bridge`.
 
+------------------------------------------------------------------------------
 | Modificador      | Hex    | Elementos                         | Efeito                                                             |
 |:-----------------|:-------|:---------------------------------:|:------------------------------------------------------------------:|
 | ACC_PUBLIC       | 0x0001 | Classe, field e método            | Aplica visibilidade publica                                        |
@@ -13,9 +14,9 @@ Os modificadores funcionam de uma forma bem especial na JVM, muitos deles tem c�
 | ACC_PROTECTED    | 0x0004 | Classe, field e método            | Aplica visibilidade protegida                                      |
 | ACC_STATIC       | 0x0008 | Field e método                    | Permite acesso apartir de contexto estatico                        |
 | ACC_FINAL        | 0x0010 | Classe, field, método e parametro | Protege contra escrita                                             |
-| ACC_SUPER        | 0x0020 | Classe                            | Veja abaixo                                                        |
+| ACC_SUPER        | 0x0020 | Classe                            | **Veja abaixo**                                                    |
 | ACC_SYNCHRONIZED | 0x0020 | Método                            | Limita a chamada para single-thread                                |
-| ACC_VOLATILE     | 0x0040 | Field                             | Veja abaixo                                                        |
+| ACC_VOLATILE     | 0x0040 | Field                             | **Veja abaixo**                                                    |
 | ACC_BRIDE        | 0x0040 | Método                            | Informa a JVM que este método é um bridge                          |
 | ACC_VARARGS      | 0x0080 | Método                            | Informa que o ultimo parametro do método é vararg                  |
 | ACC_TRANSIENT    | 0x0080 | Field                             | Informa que a field não pode ser serializada                       |
@@ -28,8 +29,9 @@ Os modificadores funcionam de uma forma bem especial na JVM, muitos deles tem c�
 | ACC_ENUM         | 0x4000 | Classe e fields dos enums         | Informa que a classe ou field é um enum                            |
 | ACC_MANDATED     | 0x8000 | Parametro                         | Parametro que existe 'implicitamente' no código fonte              |
 
+------------------------------------------------------------------------------
 
-**ACC_SUPER**: Gerada para todas classes apartir do Java 1.1, classes que não tem esta flag tem suas instruções de `invokespecial` tratados de forma diferente, como era em versões antigas da JVM, a instrução é tratada de acordo com sua documentação somente quando esta flag está presente.
+**ACC_SUPER**: Gerada para todas classes apartir do Java 1.1, classes que não tem esta flag tem suas instruções de `invokespecial` tratados de forma diferente, como era em versões antigas da JVM; a instrução é tratada de acordo com sua documentação somente quando esta flag está presente.
 
 **ACC_VOLATILE**: Diz a JVM que esta variavel será acessada por diferentes threads, a implementação da JVM irá cuidar para que esta variavel possa ser acessada pelos threads sem nenhum tipo de problema, geralmente ela armazena na memoria principal e acessa na mesma.
 
