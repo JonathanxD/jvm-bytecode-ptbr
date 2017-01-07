@@ -56,12 +56,12 @@ Se não for o caso, você deve utilizar uma representação binária.
 
 De uma forma mais simplificada: os `.` são convertidos para `/`.
 
-| Classe                  | Representação            |
-|:------------------------|:-------------------------|
-| java.lang.String        | java/lang/String         |
-| java.lang.Object        | java/lang/Object         |
-| java.util.List<T>       | java/util/List           |
-| java.util.ArrayList.Itr | java/util/ArrayList$Iter |
+| Classe                    | Representação              |
+|:--------------------------|---------------------------:|
+| `java.lang.String`        | `java/lang/String`         |
+| `java.lang.Object`        | `java/lang/Object`         |
+| `java.util.List<T>`       | `java/util/List`           |
+| `java.util.ArrayList.Itr` | `java/util/ArrayList$Iter` |
 
 
 Observação¹: É impossivel a representação de tipos primitivos em forma binária, somente classes podem ser representados desta maneira.
@@ -72,22 +72,22 @@ Observação²: A representação de classes Inner depende do nome qual o compil
 
 As classes são descritas por meio de seu nome binario junto a um prefixo (`L`) e sufixo (`;`), já os tipos primitivos são descritos por meio de nomes especiais.
 
-| Tipo                    | Representação            |
-|:------------------------|:-------------------------|
-| java.lang.String        | Ljava/lang/String;       |
-| java.lang.Object        | Ljava/lang/Object;       |
-| java.util.List<T>       | Ljava/util/List;         |
-| java.util.ArrayList.Itr | Ljava/util/ArrayList$Itr;|
-| java.lang.Byte (wrapper)| Ljava/lang/Byte;         |
-| byte                    | B                        |
-| short                   | S                        |
-| char                    | C                        |
-| int                     | I                        |
-| boolean                 | Z                        |
-| double                  | D                        |
-| float                   | F                        |
-| long                    | J                        |
-| void                    | V                        |
+| Tip o                     | Representação              |
+|:--------------------------|---------------------------:|
+| `java.lang.String`        | `Ljava/lang/String;`       |
+| `java.lang.Object`        | `Ljava/lang/Object;`       |
+| `java.util.List<T>`       | `Ljava/util/List;`         |
+| `java.util.ArrayList.Itr` | `Ljava/util/ArrayList$Itr;`|
+| `java.lang.Byte` (wrapper)| `Ljava/lang/Byte;`         |
+| `byte`                    | `B`                        |
+| `short`                   | `S`                        |
+| `char`                    | `C`                        |
+| `int`                     | `I`                        |
+| `boolean`                 | `Z`                        |
+| `double`                  | `D`                        |
+| `float`                   | `F`                        |
+| `long`                    | `J`                        |
+| `void`                    | `V`                        |
 
 Boolean e Long são descritos por um caractere diferente dos quais iniciam pois, o `B` já é reservado para `byte` e o `L` já é reservado para classes (junto ao `;`).
 
