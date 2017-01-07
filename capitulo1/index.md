@@ -72,7 +72,7 @@ Observação²: A representação de classes Inner depende do nome qual o compil
 
 As classes são descritas por meio de seu nome binario junto a um prefixo (`L`) e sufixo (`;`), já os tipos primitivos são descritos por meio de nomes especiais.
 
-| Tip o                     | Representação              |
+| Tipo                      | Representação              |
 |:--------------------------|:---------------------------|
 | `java.lang.String`        | `Ljava/lang/String;`       |
 | `java.lang.Object`        | `Ljava/lang/Object;`       |
@@ -93,15 +93,15 @@ Boolean e Long são descritos por um caractere diferente dos quais iniciam pois,
 
 ### Arrays
 
-Para descrever arrays, colocaremos `[` na frente dos tipos, a quantidade de `[` que devemos colocar equivale aos '[]' que há na frente, exemplo:
+Para descrever arrays, colocaremos `[` na frente dos tipos, a quantidade de `[` que devemos colocar equivale aos `[]` que há na frente, exemplo:
 
 `java.lang.String[]`
 
-como temos somente 1 '[]', colocaremos somente 1 '[' na frente da descrição do tipo, primeiro colocamos os `[`, depois escrevemos a descrição do tipo base (`String`):
+como temos somente um `[]`, colocaremos somente um `[` na frente da descrição do tipo, primeiro colocamos os `[`, depois escrevemos a descrição do tipo base (`String`):
 
 `[Ljava/lang/String;`
 
-Se tivermos 2 `[][]`: `java.lang.String[][]`, colocamos dois `[`: `[[Ljava/lang/String;`.
+Se tivermos dois `[][]`: `java.lang.String[][]`, colocamos dois `[`: `[[Ljava/lang/String;`.
 
 # Descrição de fields
 
@@ -110,12 +110,14 @@ Para descrevermos uma field usamos este formato:
 
 ###### Exemplos
 
-```
+```java
 private String a; // a Ljava/lang/String;
 private int[] nums; // nums [I
 ```
 
-# Descrição de métodos (**Para facilitar separei a descrição em passos**)
+# Descrição de métodos
+
+**Para facilitar separei a descrição em passos**
 
 Para descrevermos os tipos de qualquer método, usamos este formato:
 
@@ -192,14 +194,14 @@ class A<T> {
 }
 ```
 
-Acima temos alguns exemplos de assinatura genérica, porém a JVM não suporta tipos genericos de fato, eles são apenas um sugar syntax (Dê uma lida [aqui](../ref/sugarsyntax/) caso não saiba o que é sugar syntax).As assinaturas são guardadas em um lugar especial, para servir de referencia somente para quem estiver usando a classe para escrever algum código, mas para a JVM eles são inuteis.
+Acima temos alguns exemplos de assinatura genérica, porém a JVM não suporta tipos genericos de fato, eles são apenas um sugar syntax (Dê uma lida [aqui](../ref/sugarsyntax/index) caso não saiba o que é sugar syntax). As assinaturas são guardadas em um lugar especial, para servir de referencia somente para quem estiver usando a classe para escrever algum código, mas para a JVM eles são inuteis.
+
+A descrição das assinaturas genericas devem estar dentro de `<` e `>`, sempre (somente assinaturas genericas, isto não inclui tipos genericos).
 
 ###### Descrevendo
 
-Primeiro de tudo, como estamos descrevendo assinaturas, elas devem estar dentro de `<` e `>`.
-
 - Abrimos a tag `<`
-- Primeiro dizemos que estamo descrevendo o tipo da variavel `T`: `T::`. Se fosse uma variavel de nome `S`: `S::`
+- Informamos que estamos descrevendo o tipo da variavel `T`: `T::` (Se fosse uma variavel de nome `S`: `S::`).
 - Informamos seu tipo, como não há nenhum bound, dizemos que é `Object`: `Ljava/lang/Object;`
 - Fechamos a tag `>`
 
@@ -212,7 +214,7 @@ Resultado:
 Para o método fazemos o mesmo:
 
 - Abrimos a tag `<`
-- Dizemos que estamos descrevendo o tipo da variavel `E`: `E::`
+- Informamos que estamos descrevendo o tipo da variavel `E`: `E::`
 - Informamos o tipo (com há um `extends String`): `Ljava/lang/String;` (lembre-se, a regra do `+` e `-` só se aplica a `wildcard`).
 - Fechamos a tag `>`
 
@@ -225,7 +227,7 @@ Resultado:
 
 ###### Notas
 
-Na tradução de `? extends X` ou `? super X` devemos fazer: `+TX;` ou `-TX;` respectivamente, quando tivermos somente o wildcard: `?`: `T*;`, e na tradução de `T`, `E`, `V`, ou seja qual for o nome da variavel generica fazemos: `TT;`, `TE;`, `TV;` respectivamente, sempre inserindo o `T` na frende dos tipos genericos, seguido de seu nome, e por fim fechamos com: `;`.
+Na tradução de `? extends X` ou `? super X` devemos fazer: `+TX;` ou `-TX;` respectivamente; quando tivermos somente o wildcard `?` usamos `T*;`, e na tradução de `T`, `E`, `V`, ou seja qual for o nome da variavel genérica fazemos: `TT;`, `TE;`, `TV;` respectivamente, sempre inserindo o `T` na frente de seu nome, e por fim fechamos com: `;`.
 
 #### Convertendo tipos genéricos
 
@@ -262,11 +264,11 @@ Observe que no caso da `field` a erasure aplicou o tipo de `List`, isto porque o
 
 ###### Descrevendo
 
-Agora iremos descrever as assinaturas, no caso da classe, nós temos superclasse genérica e implementação genérica, quando houver uma superclasse ou uma interface geneŕica nós precisamos incluir na assinatura genérica da classe os tipos da superclasse e de todas interfaces, mesmo que somente uma tenha este tipo, e esta descrição deve ser feita na ordem em que ele aparecem no código.
+Agora iremos descrever as assinaturas, no caso da classe, nós temos superclasse genérica e implementação genérica, quando houver uma superclasse ou uma interface genérica nós precisamos incluir na assinatura genérica da classe os tipos da superclasse e de todas interfaces, mesmo que somente uma tenha este tipo, e esta descrição deve ser feita na ordem em que ele aparecem no código.
 
 Primeiro descrevemos a assinatura genérica dentro das tags `<` e `>`:
 
-Neste caso nós temos uma `List` que faz bound para `T`, então segundo a tabela, devemos traduzi-la como: `Ljava/util/List<TT;>;`, você deve sempre incluir o ';' no final de uma descrição de um tipo, seja ele genérico ou uma classe.
+Neste caso nós temos uma `List` que faz bound para `T`, então segundo a tabela, devemos traduzi-la como: `Ljava/util/List<TT;>;`, você deve sempre incluir o `;` no final de uma descrição de um tipo, seja ele genérico ou uma classe.
 
 `<T::Ljava/util/List<TT;>;>`
 
@@ -282,7 +284,7 @@ Para elas estamos descrevendo seu tipo, e não sua assinatura genérica, então 
 
 **Metodos**
 
-Para os métodos teremos um trabalho extra, lembra de como descrever os parametros dos métodos e seu retorno? Faremos igual aquilo, porem utilizando genéricos, para suas assinaturas, se houver uma, teremos algo igual ao das classes, colocando-as dentro de `<` e `>`, e logo em seguida, seus parametros e retornos genericos:
+Para os métodos teremos um trabalho extra, lembra de como descrever os parametros dos métodos e seu retorno? Faremos igual aquilo, porem utilizando genéricos. Para suas assinaturas - se houver uma - teremos algo igual ao das classes, colocando-as dentro de `<` e `>`, e logo em seguida, seus parametros e retornos genericos:
 
 Para o método `gen`, que não tem assinatura:
 
@@ -292,6 +294,10 @@ Para o método `gen2`, que tem somente o retorno generico, devermos especificar 
 
 `(I)Ljava/util/List<TT;>;`
 
-Agora para o método `gen3` teremos a primeira demonstração com retorno genérico com wildcard, assinatura genérica com upper bound, e parametro génerico (*sim, este é o mais complexo de todos*):
+Agora para o método `gen3`, teremos a primeira demonstração com retorno genérico com wildcard, assinatura genérica com upper bound, e parametro génerico (*sim, este é o mais complexo de todos*):
 
 `<E::Ljava/util/Iterable<+TE;>;>(TE;)Ljava/util/List<T*;>;`
+
+### Importante
+
+Somente especifique os tipos génericos e assinaturas caso elas existam, caso contrario não é necessario especificar.
