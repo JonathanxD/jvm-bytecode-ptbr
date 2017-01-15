@@ -178,7 +178,7 @@ Esta tabela é uma referencia para trabalharmos a conversão posteriormente
 | Variavel generica                 | `T` + Nome da variavel + `;` |
 | Classe                            | *Descrição da classe*        |
 | Definir tipo da variavel generica | `T::` + **Tipo**             |
-| Wildcard                          | `T*;`                        |
+| Wildcard                          | `*`                          |
 | Upper bound (extends) **wildcard**| `+` + **Tipo**               |
 | Lower bound (super) **wildcard**  | `-` + **Tipo**               |
 
@@ -227,7 +227,7 @@ Resultado:
 
 ###### Notas
 
-Na tradução de `? extends X` ou `? super X` devemos fazer: `+TX;` ou `-TX;` respectivamente; quando tivermos somente o wildcard `?` usamos `T*;`, e na tradução de `T`, `E`, `V`, ou seja qual for o nome da variavel genérica fazemos: `TT;`, `TE;`, `TV;` respectivamente, sempre inserindo o `T` na frente de seu nome, e por fim fechamos com: `;`.
+Na tradução de `? extends X` ou `? super X` devemos fazer: `+TX;` ou `-TX;` respectivamente; quando tivermos somente o wildcard `?` usamos `*`, e na tradução de `T`, `E`, `V`, ou seja qual for o nome da variavel genérica fazemos: `TT;`, `TE;`, `TV;` respectivamente, sempre inserindo o `T` na frente de seu nome, e se não for um wildcard sozinho fechamos com: `;`.
 
 #### Convertendo tipos genéricos
 
@@ -296,7 +296,7 @@ Para o método `gen2`, que tem somente o retorno generico, devermos especificar 
 
 Agora para o método `gen3`, teremos a primeira demonstração com retorno genérico com wildcard, assinatura genérica com upper bound, e parametro génerico (*sim, este é o mais complexo de todos*):
 
-`<E::Ljava/util/Iterable<+TE;>;>(TE;)Ljava/util/List<T*;>;`
+`<E::Ljava/util/Iterable<+TE;>;>(TE;)Ljava/util/List<*>;`
 
 ### Importante
 
