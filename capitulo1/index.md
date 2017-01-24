@@ -18,7 +18,7 @@ Os modificadores funcionam de uma forma bem especial na JVM, muitos deles tem c�
 | ACC_SUPER        | 0x0020 | Classe                            | **Veja abaixo**                                                    |
 | ACC_SYNCHRONIZED | 0x0020 | Método                            | Limita a chamada para single-thread                                |
 | ACC_VOLATILE     | 0x0040 | Field                             | **Veja abaixo**                                                    |
-| ACC_BRIDE        | 0x0040 | Método                            | Informa a JVM que este método é um bridge                          |
+| ACC_BRIDE        | 0x0040 | Método                            | **Veja mais abaixo**     |
 | ACC_VARARGS      | 0x0080 | Método                            | Informa que o ultimo parametro do método é vararg                  |
 | ACC_TRANSIENT    | 0x0080 | Field                             | Informa que a field não pode ser serializada                       |
 | ACC_NATIVE       | 0x0100 | Método                            | Informa que o método tem uma implementação em código nativo        |
@@ -35,6 +35,8 @@ Os modificadores funcionam de uma forma bem especial na JVM, muitos deles tem c�
 **ACC_SUPER**: Gerada para todas classes apartir do Java 1.1, classes que não tem esta flag tem suas instruções de `invokespecial` tratados de forma diferente, como era em versões antigas da JVM; a instrução é tratada de acordo com sua documentação somente quando esta flag está presente.
 
 **ACC_VOLATILE**: Diz a JVM que esta variavel será acessada por diferentes threads, a implementação da JVM irá cuidar para que esta variavel possa ser acessada pelos threads sem nenhum tipo de problema, geralmente ela armazena na memoria principal e acessa na mesma.
+
+**ACC_BRIDGE**: Informa que o metodo é um `bridge` (ou ponte em tradução livre) para outro método, os métodos bridges são gerados para chamar outros métodos, principalmente métodos genéricos, já que em tempo de execução todo tipo genérico é apagado, mas podem ser gerados em outros casos, como por exemplo, para a chamada de métodos `private` em inner classes e outer classes.
 
 # Tipos
 
