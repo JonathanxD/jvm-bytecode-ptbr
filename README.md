@@ -25,3 +25,8 @@ Bom, se você não vai utilizar para nada na sua vida, então não perca seu tem
 - [Capitulo 5 - Criando lambdas e invocações dinamicas](capitulo5/)
 - [Capitulo 6 - Controle de fluxo: Labels, break, continue, ifs, for, for-each, while, do-while](capitulo6/)
 - [Capitulo 7 - Controle de exceções e recursos: try-catch e try-with-resources](capitulo7/)
+
+## Extras
+
+- [Sugar Syntax](extra/sugarsyntax)
+- [ASM - Famoso framework de manipulação Bytecode](extra/asm)
